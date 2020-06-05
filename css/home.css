@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');    
+
+:root {
+    --color-1: #2B2D42;
+    --color-2: #8D99AE;
+}
+
+* { 
+    box-sizing: border-box; 
+    margin: 0;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 15% 65% 20%;
+}
+
+.container .side-bar {
+    padding: 10px;
+    background: #2B2D42;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container .side-bar .logo {
+    display: flex;
+}
+
+.container .side-bar .logo h1 {
+    align-self: center;
+    justify-self: center;
+    margin-left: 20px;
+}
+
+.container .side-bar input {
+    padding: 10px;
+    border-radius: 6px;
+    height: 30px;
+    margin-top: 20px;
+    color: black;
+}
+
+.container .content-area {
+    background: #8D99AE;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.container .content-area .book-container {
+    display: flex;
+}
+
+.container .content-area .book {
+    background: var(--color-1);
+    width: 150px;
+    height: 200px;
+    border-radius: 6px;
+    margin: 15px 0 15px 15px;
+    transition: all .5s;
+}
+
+.container .content-area .book-cover:hover  {
+    cursor: pointer;    
+    border-radius: 6px 0 0 6px !important;
+}
+
+
+.container .content-area .book .book-cover-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.container .content-area .book .book-cover-container .book-cover {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+}
+
+.container .content-area .book-info {
+    position: relative;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    width: 350px;
+    height: 200px;
+    background-color: var(--color-1);
+    opacity: 90%;
+    z-index: 1000;
+    border-radius: 0 6px 6px 0;
+
+    display: none;
+}
+
+.container .content-area .book-info.active {
+    display: block;
+}
+
+.container .content-area .book-info.active button.read {
+    position: absolute;
+    bottom: 10px;    
+    right: 10px;
+    padding: 10px 15px;
+    border: none;
+    background: #42c05e;
+    border-radius: 6px;
+    outline: none;
+}
+
+.container .content-area .book-info.active button.read:hover {
+    cursor: pointer;
+    background: white;
+    color: #42c05e;
+}
+
+.container .content-area .book-info.active button.favorite {
+    position: absolute;
+    bottom: 10px;    
+    left: 10px;
+    padding: 10px 15px;
+    border: none;
+    background: #c74868;
+    border-radius: 6px;
+    outline: none;
+}
+
+.container .content-area .book-info.active button.favorite:hover {
+    cursor: pointer;
+    background: white;
+    color: #c74868;
+}
+
+
+.container .content-area .book-info.active h2 {
+    margin-top: 5px;
+}
