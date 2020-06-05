@@ -1,7 +1,6 @@
 const books = document.querySelectorAll('.book-container');
 
-console.log(books);
-
+//Shows book information when you click on an item
 books.forEach( book => {
     book
     .querySelector('.book-cover')

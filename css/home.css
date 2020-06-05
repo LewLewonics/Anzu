@@ -12,30 +12,34 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+body { background: var(--color-2); display: flex;}
+
 .container {
-    display: grid;
-    grid-template-columns: 15% 65% 20%;
+    display: flex;
+    min-width: 80%;
 }
 
-.container .side-bar {
+.side-bar {
+    position: fixed;
     padding: 10px;
     background: #2B2D42;
     min-height: 100vh;
+    width: 300px;
     display: flex;
     flex-direction: column;
 }
 
-.container .side-bar .logo {
+.side-bar .logo {
     display: flex;
 }
 
-.container .side-bar .logo h1 {
+.side-bar .logo h1 {
     align-self: center;
     justify-self: center;
     margin-left: 20px;
 }
 
-.container .side-bar input {
+.side-bar input {
     padding: 10px;
     border-radius: 6px;
     height: 30px;
@@ -44,11 +48,13 @@
 }
 
 .container .content-area {
+    margin-left: 300px;
     background: #8D99AE;
     min-height: 100vh;
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
+    width: 80%; 
 }
 
 .container .content-area .book-container {
