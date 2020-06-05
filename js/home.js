@@ -1,8 +1,10 @@
 const content = document.getElementById('content-container');
 const favorites = document.getElementById('favorites');
+const filterInput = document.getElementById('filterInput');
 
 let allTags = [];
 let selectedTags = [];
+let titles = [];
 
 function book_info_click() {
     //Shows book information when you click on an item
@@ -48,6 +50,9 @@ async function parseJSONfromFolder(file) {
 }
 
 function addEntry(file, title, tags) {
+    //Collect titles into global array
+    titles.push(title);
+    //Fix for any tags that have spaces
     let tag_string = '';
     tags.forEach(tag => {
         tag = tag.split(' ').join('-');
@@ -88,6 +93,7 @@ function displayTags() {
     })
 }
 
+//Chnages the page based on what tags are clicked
 function changePageTags() {
     const all_tags_elements = document.querySelectorAll('.tag');
 
@@ -116,12 +122,27 @@ function displayResults() {
     });
 }
 
+function filterNames() {
+    let filterValue = document.getElementById('filterInput').value.toUpperCase();
+
+    let bookTitles = document.querySelectorAll(`.book-title`);
+
+    bookTitles.forEach(book => {
+        if (book.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
+            book.parentElement.parentElement.style.display = 'flex';
+        } else {
+            book.parentElement.parentElement.style.display = 'none';
+        }
+    });    
+}
+
 async function main() {
     await parseJSONfromFolder('anzu');
     await parseJSONfromFolder('yuri');
     await parseJSONfromFolder('azusa');
     await parseJSONfromFolder('lolis');
     await parseJSONfromFolder('blonde');
+    
     allTags.sort();
     allTags = removeDuplicateTags(allTags);
     displayTags();
@@ -129,3 +150,5 @@ async function main() {
 }
 
 main();
+
+filterInput.addEventListener('keyup', filterNames);
