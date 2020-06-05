@@ -122,7 +122,7 @@ async function main() {
     await parseJSONfromFolder('azusa');
     await parseJSONfromFolder('lolis');
 
-    removeDuplicateTags(allTags);
+    allTags = removeDuplicateTags(allTags);
     displayTags();
     changePageTags();
 }

@@ -70,13 +70,14 @@ body { background: var(--color-2); display: flex;}
     margin-top: 15px;
 }
 
-.side-bar #tags {
-    display: flex;
-    flex-wrap: wrap;
+.side-bar #tagss {
+    overflow-y: scroll;
+    height: 600px;
 }
 
 .side-bar #tagss button {
     margin-left: 5px;
+
 }
 
 .side-bar #taggs button.selected {
