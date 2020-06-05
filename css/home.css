@@ -67,12 +67,13 @@ body { background: var(--color-2); display: flex;}
     height: 200px;
     border-radius: 6px;
     margin: 15px 0 15px 15px;
-    transition: all .5s;
+    transition: all 1s;
 }
 
 .container .content-area .book-cover:hover  {
     cursor: pointer;    
     border-radius: 6px 0 0 6px !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 
