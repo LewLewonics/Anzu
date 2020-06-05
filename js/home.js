@@ -121,7 +121,8 @@ async function main() {
     await parseJSONfromFolder('yuri');
     await parseJSONfromFolder('azusa');
     await parseJSONfromFolder('lolis');
-
+    await parseJSONfromFolder('blonde');
+    allTags.sort();
     allTags = removeDuplicateTags(allTags);
     displayTags();
     changePageTags();
