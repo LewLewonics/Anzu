@@ -1,4 +1,8 @@
 const content = document.getElementById('content-container');
+const favorites = document.getElementById('favorites');
+
+let allTags = [];
+let selectedTags = [];
 
 function book_info_click() {
     //Shows book information when you click on an item
@@ -17,21 +21,42 @@ function book_info_click() {
             if (already_active == true) book.querySelector('.book-info').classList.remove('active');
             else book.querySelector('.book-info').classList.add('active');
         })
+        book
+        .querySelector('.favorite')
+        .addEventListener('click', () => {
+            book.querySelector('.favorite').classList.toggle('favorited');
+            book.classList.toggle('Favorites')
+
+            if (book.querySelector('.favorite').classList.contains('favorited')) {
+                book.querySelector('.favorite').innerHTML = "Favorited";
+            } else {
+                book.querySelector('.favorite').innerHTML = "Add To Favorites";
+            }
+        })
     });
 }
+
 
 //Get metadata from Folder
 async function parseJSONfromFolder(file) {
     const response = await fetch(`${file}/metadata.json`) 
     const data = await response.json() // parse JSON
     const title = data.title;
-    addEntry(file, title);
+    const tags = data.tag;
+    addEntry(file, title, tags);
     book_info_click();
 }
 
-function addEntry(file, title) {
+function addEntry(file, title, tags) {
+    let tag_string = '';
+    tags.forEach(tag => {
+        tag = tag.split(' ').join('-');
+        allTags.push(tag);
+        tag_string += `${tag} `;
+    });
+
     let entryHTML = `
-    <div class="book-container">
+    <div class="book-container ${tag_string}">
         <div class="book">
             <div class="book-cover-container">
                 <img class="book-cover" src="${file}/001.jpg" alt="">
@@ -47,6 +72,59 @@ function addEntry(file, title) {
     content.innerHTML += entryHTML;
 }
 
-parseJSONfromFolder('anzu');
-parseJSONfromFolder('yuri');
-parseJSONfromFolder('azusa');
+function removeDuplicateTags(tags) {
+    let unique = {};
+    tags.forEach(function(i) {
+      if(!unique[i]) {
+        unique[i] = true;
+      }
+    });
+    return Object.keys(unique);
+}
+
+function displayTags() {
+    allTags.forEach(tag => {
+        document.getElementById('tagss').innerHTML += `<button class='tag'>${tag}</button>`
+    })
+}
+
+function changePageTags() {
+    const all_tags_elements = document.querySelectorAll('.tag');
+
+    all_tags_elements.forEach( tag => {
+        tag.addEventListener('click', () => {
+            tag.classList.toggle('selected');
+            
+            if (tag.classList.contains('selected')) {
+                selectedTags.push(tag.innerHTML);
+            } else {
+                let index = selectedTags.indexOf(tag.innerHTML);
+                selectedTags.splice(index, 1);
+            }
+            displayResults();
+            console.log(selectedTags)
+        })
+    })
+}
+
+function displayResults() {
+    let all_the_tags = document.querySelectorAll('.book-container'); 
+    all_the_tags.forEach(tag => tag.style.display = 'flex');
+    selectedTags.forEach(tag => {
+        const non_tag = document.querySelectorAll(`.book-container:not(.${tag}`);
+        non_tag.forEach(entry => entry.style.display = 'none')
+    });
+}
+
+async function main() {
+    await parseJSONfromFolder('anzu');
+    await parseJSONfromFolder('yuri');
+    await parseJSONfromFolder('azusa');
+    await parseJSONfromFolder('lolis');
+
+    removeDuplicateTags(allTags);
+    displayTags();
+    changePageTags();
+}
+
+main();

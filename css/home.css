@@ -47,6 +47,42 @@ body { background: var(--color-2); display: flex;}
     color: black;
 }
 
+.side-bar button { 
+    margin-top: 20px; 
+    padding: 10px 15px;
+    border: none;
+    background: #c74868;
+    font-size:36;
+    font-weight: bold;
+    border-radius: 6px;
+    outline: none;
+}
+
+.side-bar button:hover {
+    cursor: pointer;
+}
+
+.side-bar button.selected {
+    background: #42c05e;
+}
+
+.side-bar h2 {
+    margin-top: 15px;
+}
+
+.side-bar #tags {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.side-bar #tagss button {
+    margin-left: 5px;
+}
+
+.side-bar #taggs button.selected {
+    background: #42c05e;
+}
+
 .container .content-area {
     margin-left: 300px;
     background: #8D99AE;
