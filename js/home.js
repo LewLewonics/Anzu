@@ -1,3 +1,7 @@
+//FOR USER
+    const number_of_entries = 34;
+///
+
 const content = document.getElementById('content-container');
 const favorites = document.getElementById('favorites');
 const filterInput = document.getElementById('filterInput');
@@ -137,12 +141,15 @@ function filterNames() {
 }
 
 async function main() {
-    await parseJSONfromFolder('anzu');
-    await parseJSONfromFolder('yuri');
-    await parseJSONfromFolder('azusa');
-    await parseJSONfromFolder('lolis');
-    await parseJSONfromFolder('blonde');
     
+    for (let i=0; i<number_of_entries; i++) {
+        try {
+            await parseJSONfromFolder(`hentai/${i}`);
+        }
+        catch (e) {
+            console.log(e);
+        }
+    }
     allTags.sort();
     allTags = removeDuplicateTags(allTags);
     displayTags();
