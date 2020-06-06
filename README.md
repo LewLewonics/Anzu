@@ -1,7 +1,7 @@
 # Anzu
 <img src='images/screenshot.png' width='100%' height='auto'>
 <br>
-
+[Demo](https://lewlewonics.github.io/Anzu/ "Demo")
 What is Anzu?
 ---------------
 Anzu is a simple front-end for [RicterZ's](https://github.com/RicterZ/nhentai "RicterZ's") nhentai downloader. To use this you will download the comics through his nhentai downloader tool. 
