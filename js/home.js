@@ -1,5 +1,5 @@
 //FOR USER
-    const number_of_entries = 1000;
+    const number_of_entries = 8;
 ///
 
 const content = document.getElementById('content-container');
