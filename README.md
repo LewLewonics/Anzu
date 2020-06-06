@@ -1,6 +1,7 @@
 # Anzu
 <img src='images/screenshot.png' width='100%' height='auto'>
 <br>
+<a href='https://lewlewonics.github.io/Anzu/'>Live Demo: (NSFW)</a> <br><br>
 
 What is Anzu?
 ---------------
