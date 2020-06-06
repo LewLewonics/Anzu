@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, viewport-fit=cover" />
+    <title>[Sekiya Asami] Rough Sketch</title>
+    <style>
+  
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+img {
+    vertical-align: middle;
+}
+
+html, body {
+    display: flex;
+    background-color: #e8e6e6;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+#list {
+    height: 2000px;
+    overflow: scroll;
+    width: 260px;
+    text-align: center;
+}
+
+#list img {
+    width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 15px 0;
+    cursor: pointer;
+}
+
+#list img.current {
+    background: #0003;
+}
+
+#image-container {
+    flex: auto;
+    height: 2000px;
+    background: #222;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    position: relative;
+}
+
+#image-container #dest {
+    height: 2000px;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+#image-container #page-num {
+    position: static;
+    font-size: 14pt;
+    left: 10px;
+    bottom: 5px;
+    font-weight: bold;
+    opacity: 0.75;
+    text-shadow: /* Duplicate the same shadow to make it very strong */
+        0 0 2px #222,
+        0 0 2px #222,
+        0 0 2px #222;
+}
+    </style>
+</head>
+<body>
+
+<nav id="list">
+<img src="001.jpg" class="image-item"/>
+<img src="002.jpg" class="image-item"/>
+<img src="003.jpg" class="image-item"/>
+<img src="004.jpg" class="image-item"/>
+<img src="005.jpg" class="image-item"/>
+<img src="006.jpg" class="image-item"/>
+<img src="007.jpg" class="image-item"/>
+<img src="008.jpg" class="image-item"/>
+<img src="009.jpg" class="image-item"/>
+<img src="010.jpg" class="image-item"/>
+<img src="011.jpg" class="image-item"/>
+<img src="012.jpg" class="image-item"/>
+<img src="013.jpg" class="image-item"/>
+<img src="014.jpg" class="image-item"/>
+<img src="015.jpg" class="image-item"/>
+<img src="016.jpg" class="image-item"/>
+<img src="017.jpg" class="image-item"/>
+<img src="018.jpg" class="image-item"/>
+<img src="019.jpg" class="image-item"/>
+<img src="020.jpg" class="image-item"/>
+<img src="021.jpg" class="image-item"/>
+<img src="022.jpg" class="image-item"/>
+<img src="023.jpg" class="image-item"/>
+<img src="024.jpg" class="image-item"/>
+<img src="025.jpg" class="image-item"/>
+<img src="026.jpg" class="image-item"/>
+<img src="027.jpg" class="image-item"/>
+<img src="028.jpg" class="image-item"/>
+<img src="029.jpg" class="image-item"/>
+<img src="030.jpg" class="image-item"/>
+<img src="031.jpg" class="image-item"/>
+<img src="032.jpg" class="image-item"/>
+<img src="033.jpg" class="image-item"/>
+<img src="034.jpg" class="image-item"/>
+<img src="035.jpg" class="image-item"/>
+<img src="036.jpg" class="image-item"/>
+<img src="037.jpg" class="image-item"/>
+<img src="038.jpg" class="image-item"/>
+<img src="039.jpg" class="image-item"/>
+<img src="040.jpg" class="image-item"/>
+<img src="041.jpg" class="image-item"/>
+<img src="042.jpg" class="image-item"/>
+<img src="043.jpg" class="image-item"/>
+<img src="044.jpg" class="image-item"/>
+<img src="045.jpg" class="image-item"/>
+<img src="046.jpg" class="image-item"/>
+<img src="047.jpg" class="image-item"/>
+<img src="048.jpg" class="image-item"/>
+<img src="049.jpg" class="image-item"/>
+<img src="050.jpg" class="image-item"/>
+<img src="051.jpg" class="image-item"/>
+<img src="052.jpg" class="image-item"/>
+<img src="053.jpg" class="image-item"/>
+<img src="054.jpg" class="image-item"/>
+<img src="055.jpg" class="image-item"/>
+<img src="056.jpg" class="image-item"/>
+<img src="057.jpg" class="image-item"/>
+<img src="058.jpg" class="image-item"/>
+<img src="059.jpg" class="image-item"/>
+<img src="060.jpg" class="image-item"/>
+<img src="061.jpg" class="image-item"/>
+<img src="062.jpg" class="image-item"/>
+<img src="063.jpg" class="image-item"/>
+<img src="064.jpg" class="image-item"/>
+<img src="065.jpg" class="image-item"/>
+<img src="066.jpg" class="image-item"/>
+<img src="067.jpg" class="image-item"/>
+<img src="068.jpg" class="image-item"/>
+<img src="069.jpg" class="image-item"/>
+<img src="070.jpg" class="image-item"/>
+<img src="071.jpg" class="image-item"/>
+<img src="072.jpg" class="image-item"/>
+<img src="073.jpg" class="image-item"/>
+<img src="074.jpg" class="image-item"/>
+<img src="075.jpg" class="image-item"/>
+<img src="076.jpg" class="image-item"/>
+<img src="077.jpg" class="image-item"/>
+<img src="078.jpg" class="image-item"/>
+<img src="079.jpg" class="image-item"/>
+<img src="080.jpg" class="image-item"/>
+<img src="081.jpg" class="image-item"/>
+<img src="082.jpg" class="image-item"/>
+<img src="083.jpg" class="image-item"/>
+<img src="084.jpg" class="image-item"/>
+<img src="085.jpg" class="image-item"/>
+<img src="086.jpg" class="image-item"/>
+<img src="087.jpg" class="image-item"/>
+<img src="088.jpg" class="image-item"/>
+<img src="089.jpg" class="image-item"/>
+<img src="090.jpg" class="image-item"/>
+<img src="091.jpg" class="image-item"/>
+<img src="092.jpg" class="image-item"/>
+<img src="093.jpg" class="image-item"/>
+<img src="094.jpg" class="image-item"/>
+<img src="095.jpg" class="image-item"/>
+<img src="096.jpg" class="image-item"/>
+<img src="097.jpg" class="image-item"/>
+<img src="098.jpg" class="image-item"/>
+<img src="099.jpg" class="image-item"/>
+<img src="100.jpg" class="image-item"/>
+<img src="101.jpg" class="image-item"/>
+<img src="102.jpg" class="image-item"/>
+<img src="103.jpg" class="image-item"/>
+<img src="104.jpg" class="image-item"/>
+<img src="105.jpg" class="image-item"/>
+<img src="106.jpg" class="image-item"/>
+<img src="107.jpg" class="image-item"/>
+<img src="108.jpg" class="image-item"/>
+<img src="109.jpg" class="image-item"/>
+<img src="110.jpg" class="image-item"/>
+<img src="111.jpg" class="image-item"/>
+<img src="112.jpg" class="image-item"/>
+<img src="113.jpg" class="image-item"/>
+<img src="114.jpg" class="image-item"/>
+<img src="115.jpg" class="image-item"/>
+<img src="116.jpg" class="image-item"/>
+<img src="117.jpg" class="image-item"/>
+<img src="118.jpg" class="image-item"/>
+<img src="119.jpg" class="image-item"/>
+<img src="120.jpg" class="image-item"/>
+<img src="121.jpg" class="image-item"/>
+<img src="122.jpg" class="image-item"/>
+<img src="123.jpg" class="image-item"/>
+<img src="124.jpg" class="image-item"/>
+<img src="125.jpg" class="image-item"/>
+<img src="126.jpg" class="image-item"/>
+<img src="127.jpg" class="image-item"/>
+<img src="128.jpg" class="image-item"/>
+<img src="129.jpg" class="image-item"/>
+<img src="130.jpg" class="image-item"/>
+<img src="131.jpg" class="image-item"/>
+<img src="132.jpg" class="image-item"/>
+<img src="133.jpg" class="image-item"/>
+<img src="134.jpg" class="image-item"/>
+<img src="135.jpg" class="image-item"/>
+<img src="136.jpg" class="image-item"/>
+<img src="137.jpg" class="image-item"/>
+<img src="138.jpg" class="image-item"/>
+<img src="139.jpg" class="image-item"/>
+<img src="140.jpg" class="image-item"/>
+<img src="141.jpg" class="image-item"/>
+<img src="142.jpg" class="image-item"/>
+<img src="143.jpg" class="image-item"/>
+<img src="144.jpg" class="image-item"/>
+<img src="145.jpg" class="image-item"/>
+<img src="146.jpg" class="image-item"/>
+<img src="147.jpg" class="image-item"/>
+<img src="148.jpg" class="image-item"/>
+<img src="149.jpg" class="image-item"/>
+<img src="150.jpg" class="image-item"/>
+<img src="151.jpg" class="image-item"/>
+<img src="152.jpg" class="image-item"/>
+<img src="153.jpg" class="image-item"/>
+<img src="154.jpg" class="image-item"/>
+<img src="155.jpg" class="image-item"/>
+<img src="156.jpg" class="image-item"/>
+<img src="157.jpg" class="image-item"/>
+<img src="158.jpg" class="image-item"/>
+<img src="159.jpg" class="image-item"/>
+<img src="160.jpg" class="image-item"/>
+<img src="161.jpg" class="image-item"/>
+<img src="162.jpg" class="image-item"/>
+<img src="163.jpg" class="image-item"/>
+<img src="164.jpg" class="image-item"/>
+<img src="165.jpg" class="image-item"/>
+<img src="166.jpg" class="image-item"/>
+<img src="167.jpg" class="image-item"/>
+<img src="168.jpg" class="image-item"/>
+<img src="169.jpg" class="image-item"/>
+<img src="170.jpg" class="image-item"/>
+<img src="171.jpg" class="image-item"/>
+<img src="172.jpg" class="image-item"/>
+<img src="173.jpg" class="image-item"/>
+<img src="174.jpg" class="image-item"/>
+<img src="175.jpg" class="image-item"/>
+<img src="176.jpg" class="image-item"/>
+<img src="177.jpg" class="image-item"/>
+<img src="178.jpg" class="image-item"/>
+<img src="179.jpg" class="image-item"/>
+<img src="180.jpg" class="image-item"/>
+<img src="181.jpg" class="image-item"/>
+<img src="182.jpg" class="image-item"/>
+<img src="183.jpg" class="image-item"/>
+<img src="184.jpg" class="image-item"/>
+<img src="185.jpg" class="image-item"/>
+<img src="186.jpg" class="image-item"/>
+<img src="187.jpg" class="image-item"/>
+<img src="188.jpg" class="image-item"/>
+<img src="189.jpg" class="image-item"/>
+<img src="190.jpg" class="image-item"/>
+<img src="191.jpg" class="image-item"/>
+<img src="192.jpg" class="image-item"/>
+<img src="193.jpg" class="image-item"/>
+<img src="194.jpg" class="image-item"/>
+<img src="195.jpg" class="image-item"/>
+<img src="196.jpg" class="image-item"/>
+<img src="197.jpg" class="image-item"/>
+<img src="198.jpg" class="image-item"/>
+<img src="199.jpg" class="image-item"/>
+<img src="200.jpg" class="image-item"/>
+<img src="201.jpg" class="image-item"/>
+</nav>
+
+<div id="image-container">
+    <span id="page-num"></span>
+    <div id="dest"></div>
+</div>
+
+<script>
+const pages = Array.from(document.querySelectorAll('img.image-item'));
+let currentPage = 0;
+
+function changePage(pageNum) {
+    const previous = pages[currentPage];
+    const current = pages[pageNum];
+
+    if (current == null) {
+        return;
+    }
+    
+    previous.classList.remove('current');
+    current.classList.add('current');
+
+    currentPage = pageNum;
+
+    const display = document.getElementById('dest');
+    display.style.backgroundImage = `url("${current.src}")`;
+
+    scroll(0,0)
+
+    document.getElementById('page-num')
+        .innerText = [
+                (pageNum + 1).toLocaleString(),
+                pages.length.toLocaleString()
+            ].join('\u200a/\u200a');
+}
+
+changePage(0);
+
+document.getElementById('list').onclick = event => {
+    if (pages.includes(event.target)) {
+        changePage(pages.indexOf(event.target));
+    }
+};
+
+document.getElementById('image-container').onclick = event => {
+    const width = document.getElementById('image-container').clientWidth;
+    const clickPos = event.clientX / width;
+
+    if (clickPos < 0.5) {
+        changePage(currentPage - 1);
+    } else {
+        changePage(currentPage + 1);
+    }
+};
+
+document.onkeypress = event => {
+    switch (event.key.toLowerCase()) {
+        // Previous Image
+        case 'w':
+	   scrollBy(0, -40);
+	   break;
+        case 'a':
+            changePage(currentPage - 1);
+            break;
+        // Return to previous page
+        case 'q':
+            window.history.go(-1);
+            break;
+        // Next Image
+        case ' ':
+        case 's':
+	    scrollBy(0, 40);
+            break;
+        case 'd':
+            changePage(currentPage + 1);
+            break;
+    }// remove arrow cause it won't work
+};
+
+document.onkeydown = event =>{
+    switch (event.keyCode) {
+        case 37: //left
+            changePage(currentPage - 1);
+            break;
+        case 38: //up
+            break;
+        case 39: //right
+            changePage(currentPage + 1);
+            break;
+        case 40: //down
+            break;
+    }
+};
+</script>
+</body>
+</html>

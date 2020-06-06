@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, viewport-fit=cover" />
+    <title>[Sumiya] Melon Soda (Comic lo 2014-07) [English] {5 a.m.}</title>
+    <style>
+  
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+img {
+    vertical-align: middle;
+}
+
+html, body {
+    display: flex;
+    background-color: #e8e6e6;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+#list {
+    height: 2000px;
+    overflow: scroll;
+    width: 260px;
+    text-align: center;
+}
+
+#list img {
+    width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 15px 0;
+    cursor: pointer;
+}
+
+#list img.current {
+    background: #0003;
+}
+
+#image-container {
+    flex: auto;
+    height: 2000px;
+    background: #222;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    position: relative;
+}
+
+#image-container #dest {
+    height: 2000px;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+#image-container #page-num {
+    position: static;
+    font-size: 14pt;
+    left: 10px;
+    bottom: 5px;
+    font-weight: bold;
+    opacity: 0.75;
+    text-shadow: /* Duplicate the same shadow to make it very strong */
+        0 0 2px #222,
+        0 0 2px #222,
+        0 0 2px #222;
+}
+    </style>
+</head>
+<body>
+
+<nav id="list">
+<img src="001.jpg" class="image-item"/>
+<img src="002.jpg" class="image-item"/>
+<img src="003.jpg" class="image-item"/>
+<img src="004.jpg" class="image-item"/>
+<img src="005.jpg" class="image-item"/>
+<img src="006.jpg" class="image-item"/>
+<img src="007.jpg" class="image-item"/>
+<img src="008.jpg" class="image-item"/>
+<img src="009.jpg" class="image-item"/>
+<img src="010.jpg" class="image-item"/>
+<img src="011.jpg" class="image-item"/>
+<img src="012.jpg" class="image-item"/>
+<img src="013.jpg" class="image-item"/>
+<img src="014.jpg" class="image-item"/>
+<img src="015.jpg" class="image-item"/>
+<img src="016.jpg" class="image-item"/>
+<img src="017.jpg" class="image-item"/>
+<img src="018.jpg" class="image-item"/>
+<img src="019.jpg" class="image-item"/>
+<img src="020.jpg" class="image-item"/>
+</nav>
+
+<div id="image-container">
+    <span id="page-num"></span>
+    <div id="dest"></div>
+</div>
+
+<script>
+const pages = Array.from(document.querySelectorAll('img.image-item'));
+let currentPage = 0;
+
+function changePage(pageNum) {
+    const previous = pages[currentPage];
+    const current = pages[pageNum];
+
+    if (current == null) {
+        return;
+    }
+    
+    previous.classList.remove('current');
+    current.classList.add('current');
+
+    currentPage = pageNum;
+
+    const display = document.getElementById('dest');
+    display.style.backgroundImage = `url("${current.src}")`;
+
+    scroll(0,0)
+
+    document.getElementById('page-num')
+        .innerText = [
+                (pageNum + 1).toLocaleString(),
+                pages.length.toLocaleString()
+            ].join('\u200a/\u200a');
+}
+
+changePage(0);
+
+document.getElementById('list').onclick = event => {
+    if (pages.includes(event.target)) {
+        changePage(pages.indexOf(event.target));
+    }
+};
+
+document.getElementById('image-container').onclick = event => {
+    const width = document.getElementById('image-container').clientWidth;
+    const clickPos = event.clientX / width;
+
+    if (clickPos < 0.5) {
+        changePage(currentPage - 1);
+    } else {
+        changePage(currentPage + 1);
+    }
+};
+
+document.onkeypress = event => {
+    switch (event.key.toLowerCase()) {
+        // Previous Image
+        case 'w':
+	   scrollBy(0, -40);
+	   break;
+        case 'a':
+            changePage(currentPage - 1);
+            break;
+        // Return to previous page
+        case 'q':
+            window.history.go(-1);
+            break;
+        // Next Image
+        case ' ':
+        case 's':
+	    scrollBy(0, 40);
+            break;
+        case 'd':
+            changePage(currentPage + 1);
+            break;
+    }// remove arrow cause it won't work
+};
+
+document.onkeydown = event =>{
+    switch (event.keyCode) {
+        case 37: //left
+            changePage(currentPage - 1);
+            break;
+        case 38: //up
+            break;
+        case 39: //right
+            changePage(currentPage + 1);
+            break;
+        case 40: //down
+            break;
+    }
+};
+</script>
+</body>
+</html>
