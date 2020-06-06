@@ -1,5 +1,6 @@
 # Anzu
-<img src='images/screenshot.png width='100%' height='auto'>
+<img src='images/screenshot.png' width='100%' height='auto'>
+                                                          <br>
 **Table of Contents**
 
 
