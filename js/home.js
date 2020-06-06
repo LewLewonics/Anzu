@@ -1,5 +1,5 @@
 //FOR USER
-    const number_of_entries = 4;
+    const number_of_entries = 1000;
 ///
 
 const content = document.getElementById('content-container');
@@ -68,7 +68,7 @@ function addEntry(file, title, tags) {
     <div class="book-container ${tag_string}">
         <div class="book">
             <div class="book-cover-container">
-                <img class="book-cover" src="${file}/001.jpg" alt="">
+                <img class="book-cover" src="${file}/001.jpg" alt="${file}/001.png">
             </div>
         </div>
         <div class="book-info">
