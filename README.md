@@ -11,6 +11,7 @@ How to use
 ------------
 You want to move the each doujin to the folder named 'folder' and run the shell script `./rename.sh` will still in this folder.
 ***Note: You need execute permissions so if it doesn't let you run via `./rename.sh` try `chmod 700 rename.sh` first, basically you just want to rename the files 1, 2, 3 ...however many there are***
+Next, open home.js and edit the first line to how many folders you have.
 Once that's done just open the index.html file in the Anzu directory and enjoy viewing your hentai.
 
 WIP
@@ -18,3 +19,5 @@ WIP
 I still need to save favorites via browser cache so don't worry I'm aware that part doesn't fully work.
 
 There are some entries that will appear blank, this is not a problem on my end, but more so the tool you use to download the hentai. It's beyond my skill to fix.
+
+<img src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia1.tenor.com%2Fimages%2F6f279efdd9b5468a30b25e9233129d05%2Ftenor.gif%3Fitemid%3D9964327&f=1&nofb=1'>
