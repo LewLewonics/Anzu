@@ -71,7 +71,7 @@ body { background: var(--color-2); display: flex;}
 }
 
 .side-bar #tagss {
-    overflow-y: scroll;
+    overflow-y: auto;
     height: 600px;
 }
 
