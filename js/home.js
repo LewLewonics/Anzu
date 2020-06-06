@@ -1,5 +1,5 @@
 //FOR USER
-    const number_of_entries = 34;
+    const number_of_entries = 4;
 ///
 
 const content = document.getElementById('content-container');
@@ -141,10 +141,10 @@ function filterNames() {
 }
 
 async function main() {
-    
+
     for (let i=0; i<number_of_entries; i++) {
         try {
-            await parseJSONfromFolder(`hentai/${i}`);
+            await parseJSONfromFolder(`folder/${i+1}`);
         }
         catch (e) {
             console.log(e);
