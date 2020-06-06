@@ -8,8 +8,9 @@ Anzu is a simple front-end for [RicterZ's](https://github.com/RicterZ/nhentai "R
 How to use
 ------------
 You want to move the each doujin to the folder named 'folder' and run the shell script `./rename.sh` will still in this folder.
-**Note: You need execute permissions so if it doesn't let you run via `./rename.sh` try `chmod 700 rename.sh` first**
+***Note: You need execute permissions so if it doesn't let you run via `./rename.sh` try `chmod 700 rename.sh` first***
 Once that's done just open the index.html file in the Anzu directory and enjoy viewing your hentai.
+
 WIP
 -------------
 I still need to save favorites via browser cache so don't worry I'm aware that part doesn't fully work.
