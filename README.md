@@ -16,6 +16,8 @@ Once that's done just open the index.html file in the Anzu directory and enjoy v
 
 WIP
 -------------
+Also i'm aware mobile doesnt really work, i'll get to it... one day.
+
 There are some entries that will appear blank, this is not a problem on my end, but more so the tool you use to download the hentai. It's beyond my skill to fix.
 
 <img src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia1.tenor.com%2Fimages%2F6f279efdd9b5468a30b25e9233129d05%2Ftenor.gif%3Fitemid%3D9964327&f=1&nofb=1'>
