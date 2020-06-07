@@ -216,6 +216,9 @@ body { background: var(--color-2); display: flex;}
     .top-bar #menu:hover {
         cursor: pointer;
     }
+    .container .content-area {
+        justify-content: space-evenly;
+    }
     .container .content-area{
         margin-left: 0;
         width: 100%;
