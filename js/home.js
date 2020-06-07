@@ -1,5 +1,5 @@
 //FOR USER
-    const number_of_entries = 8;
+    const number_of_entries = 7;
 ///
 
 const content = document.getElementById('content-container');
@@ -32,11 +32,14 @@ function book_info_click() {
         .addEventListener('click', () => {
             book.querySelector('.favorite').classList.toggle('favorited');
             book.classList.toggle('Favorites')
+            let title = book.querySelector('.book-title').innerHTML;
 
             if (book.querySelector('.favorite').classList.contains('favorited')) {
                 book.querySelector('.favorite').innerHTML = "Favorited";
+                localStorage.setItem(`${title}`, "true");
             } else {
                 book.querySelector('.favorite').innerHTML = "Add To Favorites";
+                localStorage.setItem(`${title}`, "false")
             }
         })
     });
@@ -140,6 +143,19 @@ function filterNames() {
     });    
 }
 
+function checkForFavorites() {
+    const titles = document.querySelectorAll('.book-title');
+    titles.forEach(title => {
+        if (localStorage.getItem(`${title.innerHTML}`) != null) {
+            if (localStorage.getItem(`${title.innerHTML}`) == "true") {
+                title.parentElement.querySelector('.favorite').innerHTML = 'Favorited';
+                title.parentElement.querySelector('.favorite').classList.add('favorited');
+                title.parentElement.parentElement.classList.add('Favorites');
+            }
+        }
+    })
+}
+
 async function main() {
 
     for (let i=0; i<number_of_entries; i++) {
@@ -150,6 +166,7 @@ async function main() {
             console.log(e);
         }
     }
+    checkForFavorites();
     allTags.sort();
     allTags = removeDuplicateTags(allTags);
     displayTags();
