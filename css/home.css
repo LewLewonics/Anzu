@@ -19,6 +19,10 @@ body { background: var(--color-2); display: flex;}
     min-width: 80%;
 }
 
+.top-bar {
+    display: none;
+}
+
 .side-bar {
     position: fixed;
     padding: 10px;
@@ -185,4 +189,36 @@ body { background: var(--color-2); display: flex;}
 
 .container .content-area .book-info.active h2 {
     margin-top: 5px;
+}
+
+@media(max-width: 800px) {
+    .side-bar {
+        width: 0;
+        display: none;
+    }
+    .top-bar {
+        position: fixed;
+        height: 50px;
+        width: 100vw;
+        background: var(--color-1);
+        display: flex;
+        z-index: 1001;
+    }
+    .top-bar h1 {
+        align-self: center;
+        justify-self: center; 
+        margin-left: 10px;
+    }
+    .top-bar #menu {
+        position: absolute;
+        right: 15px;
+    }
+    .top-bar #menu:hover {
+        cursor: pointer;
+    }
+    .container .content-area{
+        margin-left: 0;
+        width: 100%;
+        margin-top: 50px;
+    }
 }

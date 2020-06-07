@@ -176,3 +176,11 @@ async function main() {
 main();
 
 filterInput.addEventListener('keyup', filterNames);
+
+//Open menu option for mobile 
+// document.getElementById('menu').addEventListener('click', () => {
+//     const sidebar = document.querySelector('.side-bar');
+//     sidebar.style.display = 'block';
+//     sidebar.style = "width: 100%;"
+//     sidebar.style = "z-index: 1004;"
+// });
