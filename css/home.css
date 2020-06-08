@@ -37,6 +37,11 @@ body { background: var(--color-2); display: flex;}
     display: flex;
 }
 
+.side-bar .logo.mobile {
+    visibility: hidden;
+    margin-top: -40px;
+}
+
 .side-bar .logo h1 {
     align-self: center;
     justify-self: center;
@@ -193,8 +198,7 @@ body { background: var(--color-2); display: flex;}
 
 @media(max-width: 800px) {
     .side-bar {
-        width: 0;
-        display: none;
+        transform: translateX(-100%); /*Slide the modal off page at start*/
     }
     .top-bar {
         position: fixed;

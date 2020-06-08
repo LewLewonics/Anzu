@@ -178,9 +178,20 @@ main();
 filterInput.addEventListener('keyup', filterNames);
 
 //Open menu option for mobile 
-// document.getElementById('menu').addEventListener('click', () => {
-//     const sidebar = document.querySelector('.side-bar');
-//     sidebar.style.display = 'block';
-//     sidebar.style = "width: 100%;"
-//     sidebar.style = "z-index: 1004;"
-// });
+let menu = false; // Start menu closed
+document.getElementById('menu').addEventListener('click', () => {
+    const sidebar = document.querySelector('.side-bar');
+    const content = document.querySelector('.content-area');
+    const logo = document.querySelector('.logo');
+    menu = !menu;
+    if (menu == true) {
+        sidebar.style = "transform: translateX(0);"
+        content.style = "margin-left: 300px;"
+        logo.classList.toggle('mobile');
+    }
+    else {
+        sidebar.style = "transform: translateX(-100%);"
+        content.style = "margin-left: 0;"
+        logo.classList.toggle('mobile');
+    }
+});
