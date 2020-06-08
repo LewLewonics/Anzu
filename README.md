@@ -16,7 +16,7 @@ Once that's done just open the index.html file in the Anzu directory and enjoy v
 
 WIP
 -------------
-I still need to save favorites via browser cache so don't worry I'm aware that part doesn't fully work.
+Also i'm aware mobile doesnt really work, i'll get to it... one day.
 
 There are some entries that will appear blank, this is not a problem on my end, but more so the tool you use to download the hentai. It's beyond my skill to fix.
 
